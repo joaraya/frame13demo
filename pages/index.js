@@ -57,11 +57,11 @@ export default function Home({locale, locales, defaultLocale }) {
                   )
                 })}
             </ul> 
-          </section>
+          </section> 
         </header>
       </article>
 
-                {/* Slider animation */}
+      {/* Slider animation */}
 
       <section className={`${homeStyles.questionSlide}`}>
           <div className={`${homeStyles.questionSlideContainer}`}> 
@@ -71,16 +71,22 @@ export default function Home({locale, locales, defaultLocale }) {
               </label>
             </div>   
             <div className={`${homeStyles.answer} ${homeStyles.answer1}`}>
-                <div className={`${homeStyles.answerSelector}`}></div>
-                <label >{translate(locale, 'home', 'answer1')}</label>
+              <div className={`${homeStyles.answerSelectorContainer}`}>
+                <div className={`${homeStyles.answerSelector}`}></div>          
+              </div> 
+              <label className={`${homeStyles.answerText}`}>{translate(locale, 'home', 'answer1')}</label>
             </div>
             <div className={`${homeStyles.answer} ${homeStyles.answer2}`}>
-                <div className={`${homeStyles.answerSelector}`}></div>
-                <label >{translate(locale, 'home', 'answer2')}</label>
+              <div className={`${homeStyles.answerSelectorContainer}`}>
+                <div className={`${homeStyles.answerSelector}`}></div>          
+              </div> 
+              <label className={`${homeStyles.answerText}`}>{translate(locale, 'home', 'answer2')}</label>
             </div>
             <div className={`${homeStyles.answer} ${homeStyles.answer3}`}>
-                <div className={`${homeStyles.answerSelector} ${homeStyles.correctAnswer}`}></div>
-                <label >{translate(locale, 'home', 'answer3')}</label>
+              <div className={`${homeStyles.answerSelectorContainer}`}>
+                <div className={`${homeStyles.answerSelector} ${homeStyles.correctAnswer}`}></div>          
+              </div> 
+              <label className={`${homeStyles.answerText}`}>{translate(locale, 'home', 'answer3')}</label>
             </div>
           </div>
       </section>
