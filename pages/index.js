@@ -24,6 +24,7 @@ export default function Home({locale, locales, defaultLocale }) {
     <main className={homeStyles.mainContainer}>
       <Head>
         <title>{'Climate Science Demo'}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <article>
         <header className={homeStyles.headerContainer}>
@@ -31,40 +32,37 @@ export default function Home({locale, locales, defaultLocale }) {
             <Image
                 priority
                 src="/images/planet.png"
-                height={144}
-                width={144}
+                height={200}
+                width={200}
+                alt='eath'
             />
             <h1 className={homeStyles.heading2Xl}>{translate(locale,'home', 'hello')}</h1>
-            {/* <Link href="/new/new">
-                <a>this page!</a>
-           </Link> */}
           </section>
           <section className={homeStyles.optionsContainer}>     
-            <h3>{translate(locale, 'home', 'options')}</h3>
+            <strong>{translate(locale, 'home', 'options')}</strong>
             <p>{translate(locale, 'home', 'currentLanguage')}<b>{locale}</b></p>
             <p>{translate(locale, 'home', 'defaultLanguage')}<b>{defaultLocale}</b></p>
-            <p>{translate(locale, 'home', 'availableLanguages')}<b>{JSON.stringify(locales)}</b></p>
-            {translate(locale,'home', 'languageRequest')}
-            <ul id="languages">
+            <label>{translate(locale, 'home', 'availableLanguages')}</label>
+            <label><strong>{JSON.stringify(locales)}</strong></label>
+            <p>
+              <label>{translate(locale,'home', 'languageRequest')}</label> 
               {otherLocales.map((locale) => {
                   const { pathname, query, asPath } = router
                   return (
-                    <li key={locale}>
-                      <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                      <Link key={locale} href={{ pathname, query }} as={asPath} locale={locale}>
                         <a><b>{locale}</b></a>
-                      </Link>
-                    </li>
+                      </Link>        
                   )
                 })}
-            </ul> 
-          </section> 
+            </p>
+          </section>  
         </header>
       </article>
 
       {/* Slider animation */}
 
       <section className={`${homeStyles.questionSlide}`}>
-          <div className={`${homeStyles.questionSlideContainer}`}> 
+           <div className={`${homeStyles.questionSlideContainer}`}> 
             <div className={`${homeStyles.questionContainer}`}>
               <label className={`${homeStyles.question}`}>
                 {translate(locale,'home', 'question1')}
@@ -88,7 +86,7 @@ export default function Home({locale, locales, defaultLocale }) {
               </div> 
               <label className={`${homeStyles.answerText}`}>{translate(locale, 'home', 'answer3')}</label>
             </div>
-          </div>
+          </div> 
       </section>
     </main>
   )

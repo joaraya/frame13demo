@@ -5,7 +5,7 @@ export const es = {
         "currentLanguage" : "Idioma actual: ",
         "defaultLanguage" : "Idioma por defecto: ",
         "availableLanguages" : "Idiomas disponibles: ",
-        "languageRequest" : "Seleccione otro idioma: ",
+        "languageRequest" : "Seleccione idioma: ",
         "question1" : "¿Cuál de las siguientes afirmaciones acerca de la electricidad no es cierta?",
         "answer1" : "La electricidad es medida en unidades llamadas vatios.",
         "answer2" : "La electricidad se mueve a la velocidad de la luz.",
